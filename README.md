@@ -3,6 +3,8 @@
 [![Screen Shot](Angular5MAP-MONGO/models/screen.jpg)](https://github.com/artiomleo/ANGULAR-MAP-MONGO/tree/master/Angular5MAP-MONGO/models)
 
 ## Quick Start
+Install [MongoDB](https://www.mongodb.com/download-center/v2/cloud)
+
 Run ``` npm install```
 
 Run server ```node server.js```
