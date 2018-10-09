@@ -1,0 +1,46 @@
+
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+
+
+<div class="row">
+<div class="col-md-4">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <td>Info</td>
+            <td>Street</td>
+            <td>Name</td>
+        </tr>
+        </thead>
+      
+        <tbody>
+            <tr *ngFor="let coin of coins;let i = index" (click)="method(i)">
+                <td>{{ coin.info }}</td>
+                <td>{{ coin.street }}</td>
+                <td>{{ coin.name }}</td>       
+             <!-- <td><button (click)="removeMarker(i)" class="btn btn-danger">Delete</button></td> -->
+            </tr>
+        </tbody>
+
+      
+      </table>
+      
+    
+</div>
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<div class="col-md-6">
+    <agm-map id="map"  [zoom]="zoom" [latitude]="latitude" [longitude]="longitude">
+            <agm-marker *ngFor="let m of markers; let i = index"
+            [latitude]="m.lat"
+            [longitude]="m.lng"
+            (markerClick)="clickedMarker(m, i)"
+            [iconUrl]="m.iconUrl">
+            <agm-info-window>{{m.label}}</agm-info-window>
+    </agm-marker>
+      </agm-map>
+</div>
+
+
+</div>
